@@ -7,12 +7,21 @@ import android.os.AsyncTask;
  * Created by kevin on 21.03.17.
  */
 
-public class BackgroundTask extends AsyncTask<Void ,Void, Void> {
+public class BackgroundTask extends AsyncTask< String ,Void, Void> {
 
     Context context;
 
+    BackgroundTask(Context ctx) {
+        context = ctx;
+    }
+
     @Override
-    protected Void doInBackground(Void... params) {
+    protected Void doInBackground(String... params) {
+        String type = params[0];
+        if (type.equals("login")){
+
+        }
+
         return null;
     }
 

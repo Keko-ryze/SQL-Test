@@ -2,15 +2,12 @@ package com.example.kevin.sql_test;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ViewPropertyAnimatorCompatSet;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText UsernameEt, PasswordEt;
-
 
 
     @Override
@@ -25,7 +22,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClickLogin(View view){
         String username = UsernameEt.getText().toString();
         String password = PasswordEt.getText().toString();
-        
+        String type = "login";
+
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(type, username, password);
 
     }
 
